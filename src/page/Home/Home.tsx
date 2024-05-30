@@ -11,7 +11,7 @@ import {
 import { Header } from "../../components/Header/Header";
 import { Spacer } from "../../components/Spacer/Spacer";
 import { Button } from "../../components/Button/Button";
-import styled from "styled-components";
+import { ImagDiv } from "./Home.style";
 
 export const Home: React.FC = () => {
   const { navigate } = useNavigation();
@@ -64,14 +64,55 @@ export const Home: React.FC = () => {
               </Row>
 
               <Spacer mt={45}>
-                <ImagDiv style={{backgroundColor: '#fff'}}>
-                    კფმეჯო
-                </ImagDiv>
+                <ImagDiv style={{ backgroundColor: "#fff", width: 450}} />
               </Spacer>
-              
             </Row>
           </Card>
+        </Spacer>
 
+        <Spacer>
+            <div  style={{height:'10vh', overlay: 'auto'}}>
+                <Spacer mr={10}>
+                <Text>fjfnjefklefnek</Text>
+                </Spacer>
+                <Spacer mr={10}>
+                <Text>fjfnjefklefnek</Text>
+                </Spacer>
+                <Spacer mr={10}>
+                <Text>fjfnjefklefnek</Text>
+                </Spacer>
+                <Spacer mr={10}>
+                <Text>fjfnjefklefnek</Text>
+                </Spacer>
+                <Spacer mr={10}>
+                <Text>fjfnjefklefnek</Text>
+                </Spacer>
+                <Spacer mr={10}>
+                <Text>fjfnjefklefnek</Text>
+                </Spacer>
+                <Spacer mr={10}>
+                <Text>fjfnjefklefnek</Text>
+                </Spacer>
+                <Spacer mr={10}>
+                <Text>fjfnjefklefnek</Text>
+                </Spacer>
+                <Spacer mr={10}>
+                <Text>fjfnjefklefnek</Text>
+                </Spacer>
+                <Spacer mr={10}>
+                <Text>fjfnjefklefnek</Text>
+                </Spacer>
+                <Spacer mr={10}>
+                <Text>fjfnjefklefnek</Text>
+                </Spacer>
+                <Spacer mr={10}>
+                <Text>fjfnjefklefnek</Text>
+                </Spacer>
+
+            </div>  
+        </Spacer>
+
+        <Spacer>
           <Text
             fontSize={54}
             textAlign="center"
@@ -81,34 +122,23 @@ export const Home: React.FC = () => {
           >
             Benefits of PTO Genius
           </Text>
-          <Row justifyContent='center' width={'100%'}>
-            <Conteiner width={'65s%'}>
-
-          <Text
-            fontSize={18}
-            textAlign="center"
-            color='purpleNavy'
-            opacity={'60%'}
-            fontFamily="Arial"
-          >
-            Increase job satisfaction, improve engagement, decrease burnout and
-            lower payroll liability by reimagining what employees can do with
-            their PTO.
-          </Text>
+          <Row justifyContent="center" width={"100%"}>
+            <Conteiner width={"65%"}>
+              <Text
+                fontSize={18}
+                textAlign="center"
+                color="purpleNavy"
+                opacity={"60%"}
+                fontFamily="Arial"
+              >
+                Increase job satisfaction, improve engagement, decrease burnout
+                and lower payroll liability by reimagining what employees can do
+                with their PTO.
+              </Text>
             </Conteiner>
-            
           </Row>
-
         </Spacer>
       </Content>
     </ScreenContent>
   );
 };
-
-
-export const ImagDiv = styled.div`
-  background-color: #fffff
-  width: 450px;
-  height: 555px;
-  border-radius: 20px 0 20px 0;
-`;
