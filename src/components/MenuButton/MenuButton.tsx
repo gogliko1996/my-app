@@ -4,7 +4,7 @@ import { styled, alpha } from "@mui/material/styles";
 import Menu, { MenuProps } from "@mui/material/Menu";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { MenuButtonProps } from "./MenuButton.props";
-import { colors } from "../../constant/color/color";
+import { colors } from "../../utils/color/color";
 import { Text } from "../ScreenRoot/ScreenContent";
 
 export const MenuButton: React.FC<MenuButtonProps> = (props) => {

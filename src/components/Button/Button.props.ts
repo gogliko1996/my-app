@@ -1,5 +1,5 @@
 import type { ReactElement } from "react"
-import type { ColorTypes } from "../../constant/color/color"
+import type { ColorTypes } from "../../utils/color/color"
 import { CSSProperties } from "styled-components";
 
 export interface ButtonProps {
@@ -11,4 +11,5 @@ export interface ButtonProps {
     height?: number | string;
     borderColor?: ColorTypes;
     style?: CSSProperties
+    onClick?: () => void;
 }

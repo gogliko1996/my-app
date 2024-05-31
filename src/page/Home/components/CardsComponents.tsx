@@ -1,0 +1,201 @@
+import React, { useState } from "react";
+import { Card, Image, Row, Text } from "../../../components/ScreenRoot/ScreenContent";
+import { statArray } from "../../../constant/optional";
+import { Spacer } from "../../../components/Spacer/Spacer";
+import { useResponsive } from "../../../utils/hooks/useResponsive";
+import { colors } from "../../../utils/color/color";
+import backImage from '../../../utils/image/goal-setting-theory-person-writes-on-board-presenting-to-team.webp'
+import profilImage from '../../../utils/image/pexels-photo-771742.jpeg'
+
+export const CardsComponents: React.FC = () => {
+  const [mouseOver, setMouseOver] = useState<number | string>("");
+
+  const { isResponsiveMobile, isResponsiveweb } = useResponsive();
+
+  return (
+    <>
+      {!isResponsiveMobile && (
+        <Row width={"100%"} justifyContent={"space-between"}>
+          {statArray.map((item, index) => (
+            <Spacer mt={mouseOver === index ? 1 : 20} mb={10} mr={10}>
+              <Card
+                style={{
+                  backgroundColor:
+                    mouseOver === index ? colors.darkSlateBlue : undefined,
+                }}
+                width={280}
+                height={229}
+                key={index}
+                paddingTop={20}
+                paddingLeft={20}
+                paddingRight={20}
+                onMouseOver={() => setMouseOver(index)}
+                onMouseOut={() => setMouseOver("")}
+              >
+                <Spacer>
+                  <Text
+                    style={{
+                      color: mouseOver === index ? colors.wite : undefined,
+                    }}
+                    fontSize={18}
+                    fontFamily="Arial"
+                    fontWeight="bold"
+                    color="eigengrau"
+                    textAlign="center"
+                  >
+                    {item.title}
+                  </Text>
+                  <Spacer mt={40}>
+                    <Text
+                      style={{
+                        color: mouseOver === index ? colors.wite : undefined,
+                      }}
+                      textAlign="center"
+                      fontSize={14}
+                      color="purpleNavy"
+                    >
+                      {item.body}
+                    </Text>
+                  </Spacer>
+                </Spacer>
+              </Card>
+            </Spacer>
+          ))}
+        </Row>
+      )}
+
+      <Spacer mt={20}>
+        <Row
+          width={"100%"}
+          justifyContent={isResponsiveweb ? "center" : "space-between"}
+        >
+          <Card
+            backgroundColor="magnoliaWhite"
+            width={!isResponsiveweb ? 780 : "100%"}
+            height={isResponsiveMobile ? 793 : 690}
+            paddingLeft={50}
+            paddingRight={50}
+            paddingTop={50}
+          >
+            <Spacer>
+              {isResponsiveMobile && (
+                <div
+                  style={{
+                    width: "100%",
+                    display: "flex",
+                    justifyContent: "center",
+                    overflowX: "scroll",
+                    whiteSpace: "nowrap",
+                    marginBottom: 20,
+                  }}
+                >
+                  {statArray.map((item, index) => (
+                    <Spacer key={index} mr={20}>
+                      <div
+                        onClick={() => setMouseOver(index)}
+                        style={{ cursor: "pointer" }}
+                      >
+                        <Text
+                          style={{
+                            color:
+                              mouseOver === index
+                                ? colors.mediumPurple
+                                : undefined,
+                          }}
+                        >
+                          {item.title}
+                        </Text>
+                      </div>
+                    </Spacer>
+                  ))}
+                </div>
+              )}
+
+              <Text
+                color="darkInttigo"
+                textAlign="center"
+                fontFamily="Arial"
+                fontWeight="bold"
+                fontSize={36}
+              >
+                Nullam ultricies luctus elit in facilisis. Etiam in elit mauris.
+              </Text>
+              <Text textAlign="center" fontSize={18} color="purpleNavy">
+                Increase job satisfaction, improve engagement, decrease burnout
+                and lower payroll liability by reimagining what employees can do
+                with their PTO.
+              </Text>
+
+              <Spacer mt={50}>
+                <Card
+                  noShadow
+                  height={393}
+                  backgroundColor="wite"
+                  borderBottomLeftRadius={0}
+                  borderBottomRightRadius={0}
+                ></Card>
+              </Spacer>
+            </Spacer>
+          </Card>
+
+          
+          {!isResponsiveweb && (
+            <Card
+              width={380}
+              height={690}
+              paddingLeft={20}
+              paddingRight={20}
+              paddingTop={345}
+              backgroundImage={backImage}
+            >
+              <Spacer>
+                <Spacer mb={-16} ml={15}>
+                  <Card width={100} height={100}>
+                    <Image src={profilImage}/>
+                  </Card>
+                </Spacer>
+
+                <Card
+                  width={340}
+                  height={206}
+                  paddingLeft={15}
+                  paddingRight={15}
+                  paddingBottom={10}
+                  paddingTop={10}
+                  backgroundColor='wite'
+                >
+                  <Spacer>
+                    <Text
+                      color="russianViolet"
+                      fontFamily="Arial"
+                      fontWeight="bold"
+                      fontSize={18}
+                    >
+                      We like to think this offers our clients a unique
+                      combination — service they can depend on, with the freedom
+                      to collaborate at scale.
+                    </Text>
+
+                    <Spacer mt={35} mb={-5}>
+                      <Text
+                        fontFamily="Arial"
+                        fontSize={14}
+                        fontWeight="bold"
+                        color="darkSlateBlue"
+                      >
+                        Tim Cook
+                      </Text>
+                    </Spacer>
+                    <Text fontFamily="Arial" fontSize={12} color="Rhythm">
+                      HR Manager
+                    </Text>
+                  </Spacer>
+                </Card>
+              </Spacer>
+            </Card>
+          )}
+        </Row>
+      </Spacer>
+    </>
+  );
+};

@@ -4,7 +4,7 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { NavigationButtonProps } from "./NavigationButton.props";
 import MenuIcon from '@mui/icons-material/Menu';
-import { colors } from "../../constant/color/color";
+import { colors } from "../../utils/color/color";
 
 
 
