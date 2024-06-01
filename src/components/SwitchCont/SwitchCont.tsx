@@ -1,77 +1,77 @@
 import React, { useState } from "react";
-
 import { styled } from "@mui/material/styles";
 import Switch from "@mui/material/Switch";
 import Stack from "@mui/material/Stack";
 import { Card, Conteiner, Row, Text } from "../ScreenRoot/ScreenContent";
 import { Spacer } from "../Spacer/Spacer";
-import { SwitchContProps } from "./SwitchCont.props";
+import { SwitchContArray } from "../../constant/optional";
+import { useResponsive } from "../../utils/hooks/useResponsive";
 
-export const SwitchCont: React.FC<SwitchContProps> = ({opionals}) => {
+export const SwitchCont: React.FC = () => {
+  const [activeIndices, setActiveIndices] = useState<number[]>([]);
 
-  const [clickSwitc, setclickSwitc] = useState<boolean>(false);
+  const { isResponsiveMobile } = useResponsive();
 
-  const switcClick = () => {
-    setclickSwitc(!clickSwitc);
+  const switchClick = (index: number) => {
+    setActiveIndices((prevIndices) => {
+      if (prevIndices.includes(index)) {
+        return prevIndices.filter((i) => i !== index);
+      } else {
+        return [...prevIndices, index];
+      }
+    });
   };
 
-  if (!opionals) {
-    return;
-  }
   return (
     <>
-      {opionals.map((item, index) => (
+      {SwitchContArray.map((item, index) => (
         <Spacer mt={20} key={index}>
-        <Card
-          width={280}
-          height={80}
-          paddingLeft={16}
-          paddingRight={16}
-          paddingTop={16}
-          border="1px solid"
-          borderColor="gray"
-          noShadow
-        >
-          <Row
-            width={"100%"}
-            alignItems="center"
-            justifyContent="space-between"
+          <Card
+            width={isResponsiveMobile ? 380 : 280}
+            height={80}
+            paddingLeft={16}
+            paddingRight={16}
+            paddingTop={16}
+            border="2px solid"
+            borderColor={activeIndices.includes(index) ? 'mediumPurple' : "gray"}
+            noShadow
           >
-            <Row>
-              <Card
-                width={48}
-                height={48}
-                backgroundColor={item.color}
-                borderBottomLeftRadius={12}
-                borderBottomRightRadius={12}
-                borderTopLeftRadius={12}
-                borderTopRightRadius={12}
-              ></Card>
-              <Conteiner>
-                <Spacer mt={-10} ml={10}>
-                  <Spacer mb={-10}>
-                    <Text fontSize={16} fontWeight="bold" color="darkInttigo">
-                      {item.title}
+            <Row width={"100%"} alignItems="center" justifyContent="space-between">
+              <Row>
+                <Card
+                  style={{ backgroundColor: item.color }}
+                  width={48}
+                  height={48}
+                  borderBottomLeftRadius={12}
+                  borderBottomRightRadius={12}
+                  borderTopLeftRadius={12}
+                  borderTopRightRadius={12}
+                ></Card>
+                <Conteiner>
+                  <Spacer mt={-10} ml={10}>
+                    <Spacer mb={-10}>
+                      <Text fontSize={16} fontWeight="bold" color="darkInttigo">
+                        {item.title}
+                      </Text>
+                    </Spacer>
+                    <Text fontSize={12} color="purpleNavy">
+                      {item.body}
                     </Text>
                   </Spacer>
-                  <Text fontSize={12} color="purpleNavy">
-                    {item.body}
-                  </Text>
-                </Spacer>
-              </Conteiner>
-            </Row>
+                </Conteiner>
+              </Row>
 
-            <Spacer mt={-5}>
-              <Stack direction="row" spacing={1} alignItems="center">
-                <AntSwitch
-                  onClick={() => switcClick()}
-                  defaultChecked={false}
-                  inputProps={{ "aria-label": "ant design" }}
-                />
-              </Stack>
-            </Spacer>
-          </Row>
-        </Card>
+              <Spacer mt={-5}>
+                <Stack direction="row" spacing={1} alignItems="center">
+                  <AntSwitch
+                    onClick={() => switchClick(index)}
+                    checked={activeIndices.includes(index)}
+                    inputProps={{ "aria-label": "ant design" }}
+                  />
+                </Stack>
+              </Spacer>
+            </Row>
+          </Card>
         </Spacer>
       ))}
     </>
@@ -114,10 +114,9 @@ const AntSwitch = styled(Switch)(({ theme }) => ({
   "& .MuiSwitch-track": {
     borderRadius: 16 / 2,
     opacity: 1,
-    backgroundColor:
-      theme.palette.mode === "dark"
-        ? "rgba(255,255,255,.35)"
-        : "rgba(0,0,0,.25)",
+    backgroundColor: theme.palette.mode === "dark"
+      ? "rgba(255,255,255,.35)"
+      : "rgba(0,0,0,.25)",
     boxSizing: "border-box",
   },
 }));

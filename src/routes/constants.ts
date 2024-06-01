@@ -1,4 +1,6 @@
-export const routeTable = {
+export const screen = {
     home: '/',
-    newroom: '/newroom'
+    newroom: '/newroom',
+    integrationPage: '/integrationPage',
+    integrationPagedetails: '/integrationPagedetails'
 }

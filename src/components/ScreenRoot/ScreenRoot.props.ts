@@ -48,6 +48,31 @@ export interface CardProps {
   borderColor?: ColorTypes;
 }
 
+export interface InputProps {
+  width?: number | string | any;
+  height?: number | string | any;
+  border?: string;
+  borderColor?: ColorTypes;
+  borderRadius?: number
+  placeholderTop?: number | string | any
+  transform?: number
+}
+
+export interface Selectprops {
+  width?: number | string | any;
+  height?: number | string | any;
+  border?: string;
+  borderColor?: ColorTypes;
+  borderRadius?: number
+}
+
+
+export interface ConteinerProps {
+  width?: number | string | any;
+  height?: number | string | any;
+  backgroundColor?: ColorTypes;
+}
+
 
 export interface ImageProps {
   borderTopLeftRadius?: number;

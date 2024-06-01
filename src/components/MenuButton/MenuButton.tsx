@@ -8,7 +8,8 @@ import { colors } from "../../utils/color/color";
 import { Text } from "../ScreenRoot/ScreenContent";
 
 export const MenuButton: React.FC<MenuButtonProps> = (props) => {
-  const { text, bodyText } = props;
+  const { text, bodyText, color, noOpacity, icon, width, justifyContent } =
+    props;
 
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
@@ -28,11 +29,22 @@ export const MenuButton: React.FC<MenuButtonProps> = (props) => {
         aria-haspopup="true"
         aria-expanded={open ? "true" : undefined}
         disableElevation
-        style={{color: colors.darkInttigo}}
+        style={{
+          color: color ? color : colors.darkInttigo,
+          justifyContent: justifyContent ? justifyContent : "none",
+          width: width ? width : "none",
+        }}
         onClick={handleClick}
-        endIcon={<KeyboardArrowDownIcon />}
+        endIcon={icon ? icon : <KeyboardArrowDownIcon />}
       >
-        <Text fontFamily='unset'    fontSize={12} color="darkInttigo" opacity={'60%'} >{text}</Text>
+        <Text
+          style={{ color: color ? color : colors.darkInttigo }}
+          fontFamily="unset"
+          fontSize={12}
+          opacity={noOpacity ? "nono" : "60%"}
+        >
+          {text}
+        </Text>
       </Button>
       <StyledMenu
         id="demo-customized-menu"

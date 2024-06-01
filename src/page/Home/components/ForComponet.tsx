@@ -20,12 +20,14 @@ export const ForComponent: React.FC = () => {
   const [onClick, setOnClick] = useState<number>(0);
   const { isResponsiveweb, isResponsiveMobile, isResponsiveTablet } =
     useResponsive();
+
+    
   return (
     <Card
       backgroundColor="ghostWhite"
       paddingTop={80}
-      paddingLeft={50}
-      paddingRight={50}
+      paddingLeft={isResponsiveMobile ? 10 : 50}
+      paddingRight={isResponsiveMobile ? 10 : 50}
       height={isResponsiveMobile ? 1500 : undefined}
     >
       <Row
@@ -73,8 +75,8 @@ export const ForComponent: React.FC = () => {
           </Spacer>
         </Conteiner>
 
-        <Conteiner width={isResponsiveTablet ? '65%' : 450} height={590}>
-          <Spacer ml={10} mt={isResponsiveMobile ? 80 : undefined}>
+        <Conteiner width={isResponsiveMobile ? '100%' : 450} height={590}>
+          <Spacer ml={10} mt={isResponsiveMobile ? 200 : undefined}>
             <div
               style={{
                 width: "100%",
@@ -130,55 +132,47 @@ export const ForComponent: React.FC = () => {
               </Conteiner>
             </Row>
 
-            <Spacer mt={26}>
+            <Spacer mt={26} mb={40}>
               <Line />
             </Spacer>
 
             <Spacer>
-              <Text fontSize={24} fontWeight="bold" color="darkInttigo">
-                Nullam ultricies luctus elit in facilisis. Etiam in elit mauris.
-              </Text>
-              <Text fontSize={14} color="purpleNavy">
-                Nullam ultricies luctus elit in facilisis. Etiam in elit mauris.
-                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-                posuere.
-              </Text>
-
               <Row alignItems="center">
-                <CheckCircleIcon
+              {!isResponsiveMobile &&   <CheckCircleIcon
                   fontSize="small"
                   style={{ color: colors.maximumBluePurple }}
-                />
+                />}
                 <Text fontSize={14} color="darkInttigo">
                   High Churn
                 </Text>
               </Row>
 
               <Row alignItems="center">
-                <CheckCircleIcon
+              {!isResponsiveMobile &&   <CheckCircleIcon
                   fontSize="small"
                   style={{ color: colors.maximumBluePurple }}
-                />
+                />}
                 <Text fontSize={14} color="darkInttigo">
                   High Employee Burnout
                 </Text>
               </Row>
 
               <Row alignItems="center">
-                <CheckCircleIcon
+                {!isResponsiveMobile &&   <CheckCircleIcon
                   fontSize="small"
                   style={{ color: colors.maximumBluePurple }}
-                />
+                />}
+               
                 <Text fontSize={14} color="darkInttigo">
                   Reduce Employee Churn
                 </Text>
               </Row>
 
               <Row alignItems="center">
-                <CheckCircleIcon
+              {!isResponsiveMobile &&   <CheckCircleIcon
                   fontSize="small"
                   style={{ color: colors.maximumBluePurple }}
-                />
+                />}
                 <Text fontSize={14} color="darkInttigo">
                   Lower Employee Related Costs
                 </Text>

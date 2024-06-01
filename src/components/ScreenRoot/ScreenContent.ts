@@ -1,5 +1,13 @@
 import styled from "styled-components";
-import { CardProps, ImageProps, RowProps, TextProps } from "./ScreenRoot.props";
+import {
+  CardProps,
+  ConteinerProps,
+  ImageProps,
+  InputProps,
+  RowProps,
+  Selectprops,
+  TextProps,
+} from "./ScreenRoot.props";
 import { pixelsToRem } from "../../utils/pixelsToRem/pixelsToRem";
 import { colors } from "../../utils/color/color";
 
@@ -65,6 +73,31 @@ export const Card = styled.div<CardProps>`
   background-repeat: no-repeat;
 `;
 
+export const Input = styled.input<InputProps>`
+  width: ${({ width }) => (width ? pixelsToRem(width) : pixelsToRem(380))};
+  height: ${({ height }) => (height ? pixelsToRem(height) : pixelsToRem(48))};
+  border-radius: ${({ borderRadius }) =>
+    borderRadius ? `${borderRadius}px` : "12px"};
+  border: ${({ border }) => border || "1px solid"};
+  border-color: ${({ borderColor }) => borderColor || "gray"};
+
+  &::placeholder {
+    position: relative;
+    top: ${({ placeholderTop }) => pixelsToRem(placeholderTop)};
+    transform: ${({ transform }) =>
+      transform !== undefined && `translateY(-${transform}%)`};
+  }
+`;
+
+export const Select = styled.select<Selectprops>`
+  width: ${({ width }) => (width ? pixelsToRem(width) : pixelsToRem(380))};
+  height: ${({ height }) => (height ? pixelsToRem(height) : pixelsToRem(48))};
+  border-radius: ${({ borderRadius }) =>
+    borderRadius ? `${borderRadius}px` : "12px"};
+  border: ${({ border }) => border || "1px solid"};
+  border-color: ${({ borderColor }) => borderColor || "gray"};
+`;
+
 export const Image = styled.img<ImageProps>`
   width: 100%;
   height: 100%;
@@ -77,8 +110,9 @@ export const Image = styled.img<ImageProps>`
     `${borderTopLeftRadius}px ${borderTopRightRadius}px ${borderBottomRightRadius}px ${borderBottomLeftRadius}px`};
 `;
 
-
-export const Conteiner = styled.div<CardProps>`
+export const Conteiner = styled.div<ConteinerProps>`
   width: ${({ width }) => pixelsToRem(width)};
   height: ${({ height }) => pixelsToRem(height)};
+  background-color: ${({ backgroundColor }) =>
+    backgroundColor && colors[backgroundColor]};
 `;

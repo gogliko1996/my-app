@@ -6,8 +6,11 @@ import { Button } from "../Button/Button";
 import { useResponsive } from "../../utils/hooks/useResponsive";
 import { NavigationButton } from "../NavigationButton/NavigationButton";
 import { options } from "../../constant/optional";
+import { useNavigation } from "../../utils/hooks/usenavigation";
+import { screen } from "../../routes/constants";
 
 export const Header: React.FC = () => {
+  const {navigation} = useNavigation()
   const { isResponsiveTablet, isResponsiveMobile } = useResponsive();
 
   return (
@@ -18,7 +21,7 @@ export const Header: React.FC = () => {
           <div style={{ backgroundColor: "#000", width: 29, height: 32 }} />
         </Spacer>
         <Spacer mr={50}>
-          <Row alignItems="center">
+          <Row alignItems="center" onClick={() => navigation(screen.home)} style={{cursor: 'pointer'}}>
             <Text fontSize={20} fontFamily='Arial' fontWeight='bold' color='russianViolet'>PTO</Text>
             <Text fontSize={20} color='russianViolet'>GENIUS</Text>
           </Row>

@@ -15,7 +15,9 @@ import VerticalAlignBottomIcon from "@mui/icons-material/VerticalAlignBottom";
 import VerticalAlignTopIcon from "@mui/icons-material/VerticalAlignTop";
 import { Button } from "../../../components/Button/Button";
 import { useResponsive } from "../../../utils/hooks/useResponsive";
-import image from "../../../utils/image/pexels-photo-771742.jpeg"
+import image from "../../../utils/image/pexels-photo-771742.jpeg";
+import { MenuButton } from "../../../components/MenuButton/MenuButton";
+import CircleIcon from "@mui/icons-material/Circle";
 
 export const ProductHeder: React.FC = () => {
   const [onClick, setOnClick] = useState<number | string>("");
@@ -76,11 +78,11 @@ export const ProductComponent: React.FC = () => {
       >
         {!isResponsiveMobile ||
           (isResponsiveTablet && (
-            <Row width={560} height={590} flexDirection="column">
-              <Spacer ml={85}>
+            <Row width={isResponsiveMobile ? 380 : 560} height={590} flexDirection="column" justifyContent="center">
+              <Spacer ml={isResponsiveMobile ? 50 : 85}>
                 <Card
-                  width={380}
-                  height={90}
+                   width={isResponsiveMobile ? 280 : 380}
+                   height={ isResponsiveMobile? 70 : 90}
                   noShadow
                   borderBottomLeftRadius={0}
                   borderBottomRightRadius={0}
@@ -88,12 +90,62 @@ export const ProductComponent: React.FC = () => {
                 />
               </Spacer>
 
-              <Card height={350} style={{ zIndex: 100 }}></Card>
+              <Card
+                height={350}
+                style={{ zIndex: 100 }}
+                paddingLeft={20}
+                paddingTop={20}
+                paddingRight={30}
+              >
+                <Spacer>
+                  <Spacer mb={-20}>
+                    <Text fontSize={18} fontWeight="bold" color="darkInttigo">
+                      Historical
+                    </Text>
+                  </Spacer>
 
-              <Spacer ml={85}>
+                  <Row
+                    width={"100%"}
+                    justifyContent="space-between"
+                    alignItems="center"
+                  >
+                    <Row
+                      width={270}
+                      justifyContent="space-between"
+                      alignItems="center"
+                    >
+                      <Spacer mr={3}>
+                        <CircleIcon
+                          style={{ fontSize: 10, color: colors.mediumPurple }}
+                        />
+                      </Spacer>
+                      <Text fontSize={12} color="darkInttigo">
+                        Lisa Mathewson
+                      </Text>
+                      <Spacer mr={3}>
+                        <CircleIcon
+                          style={{ fontSize: 10, color: colors.gray }}
+                        />
+                      </Spacer>
+                      <Text fontSize={12} color="darkInttigo">
+                        Company Average
+                      </Text>
+                    </Row>
+
+                    <MenuButton
+                      text="Company Average"
+                      color={colors.darkInttigo}
+                      bodyText={["test1", "test2"]}
+                    />
+                  </Row>
+                </Spacer>
+              </Card>
+
+
+              <Spacer ml={isResponsiveMobile ? 50 : 85}>
                 <Card
-                  width={380}
-                  height={90}
+                  width={isResponsiveMobile ? 280 : 380}
+                  height={ isResponsiveMobile? 70 : 90}
                   noShadow
                   borderTopLeftRadius={0}
                   borderTopRightRadius={0}
@@ -193,7 +245,56 @@ export const ProductComponent: React.FC = () => {
                 />
               </Spacer>
 
-              <Card height={350} style={{ zIndex: 100 }}></Card>
+              <Card
+                height={350}
+                style={{ zIndex: 100 }}
+                paddingLeft={20}
+                paddingTop={20}
+                paddingRight={30}
+              >
+                <Spacer>
+                  <Spacer mb={-20}>
+                    <Text fontSize={18} fontWeight="bold" color="darkInttigo">
+                      Historical
+                    </Text>
+                  </Spacer>
+
+                  <Row
+                    width={"100%"}
+                    justifyContent="space-between"
+                    alignItems="center"
+                  >
+                    <Row
+                      width={270}
+                      justifyContent="space-between"
+                      alignItems="center"
+                    >
+                      <Spacer mr={3}>
+                        <CircleIcon
+                          style={{ fontSize: 10, color: colors.mediumPurple }}
+                        />
+                      </Spacer>
+                      <Text fontSize={12} color="darkInttigo">
+                        Lisa Mathewson
+                      </Text>
+                      <Spacer mr={3}>
+                        <CircleIcon
+                          style={{ fontSize: 10, color: colors.gray }}
+                        />
+                      </Spacer>
+                      <Text fontSize={12} color="darkInttigo">
+                        Company Average
+                      </Text>
+                    </Row>
+
+                    <MenuButton
+                      text="Company Average"
+                      color={colors.darkInttigo}
+                      bodyText={["test1", "test2"]}
+                    />
+                  </Row>
+                </Spacer>
+              </Card>
 
               <Spacer ml={85}>
                 <Card
