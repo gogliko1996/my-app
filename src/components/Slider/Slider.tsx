@@ -49,8 +49,8 @@ export const Slider: React.FC = () => {
 
   return (
     <Swiper
-      spaceBetween={50}
-      slidesPerView={3}
+      spaceBetween={10}
+      slidesPerView={isResponsiveTablet ? 2 :  3}
     >
       {array.map((item, index) => (
         <SwiperSlide>
@@ -69,7 +69,7 @@ export const Slider: React.FC = () => {
                 >
                     <Image src={item.image}/>
                 </Card>
-                <Conteiner width={'40%'}>
+                <Conteiner width={150}>
                   <Spacer mt={-10} ml={10}>
                     <Spacer mb={-10}>
                       <Text fontSize={16} fontWeight="bold" color="darkInttigo">

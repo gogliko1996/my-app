@@ -37,6 +37,7 @@ export const CangePage: React.FC<CangePageProps> = (props) => {
             borderTopLeftRadius={10}
             borderTopRightRadius={10}
             noShadow
+            style={{cursor: 'pointer'}}
             border="1px solid"
             borderColor="gray"
             onClick={() => numberClick > 0 && setNumberClick(numberClick - 1)}
@@ -67,6 +68,7 @@ export const CangePage: React.FC<CangePageProps> = (props) => {
               border="1px solid"
               borderColor="gray"
               onClick={() => setNumberClick(index) }
+              style={{cursor: 'pointer'}}
             >
               <Row
                 width={38}
@@ -90,6 +92,7 @@ export const CangePage: React.FC<CangePageProps> = (props) => {
             borderTopLeftRadius={10}
             borderTopRightRadius={10}
             noShadow
+            style={{cursor: 'pointer'}}
             border="1px solid"
             borderColor="gray"
              onClick={() => numberClick < numbers.length - 1 && setNumberClick(numberClick + 1)}

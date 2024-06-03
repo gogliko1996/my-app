@@ -2,5 +2,7 @@ export const screen = {
     home: '/',
     newroom: '/newroom',
     integrationPage: '/integrationPage',
-    integrationPagedetails: '/integrationPagedetails'
+    integrationPagedetails: '/integrationPagedetails',
+    blogPage: '/blogPage',
+    articleDetail: '/articleDetail'
 }

@@ -11,54 +11,56 @@ import { Spacer } from "../../../components/Spacer/Spacer";
 import { SwitchCont } from "../../../components/SwitchCont/SwitchCont";
 import profileImage from "../../../utils/image/pexels-photo-771742.jpeg";
 import { useResponsive } from "../../../utils/hooks/useResponsive";
+import { HederScroll } from "../../../components/HederScroll/HederScroll";
 
 const ButtonArray = ["Small Business", "Small Business", "Small Business"];
 
 export const Integration: React.FC = () => {
-    const [onClick, setOnClick] = useState<number>(0);
+  const [onClick, setOnClick] = useState<number>(0);
 
-    const { isResponsiveMobile, isResponsiveTablet } = useResponsive();
+  const { isResponsiveMobile, isResponsiveTablet } = useResponsive();
 
   return (
     <Spacer mt={100}>
-        <Spacer mb={50}>
-        <div
-              style={{
-                width: "100%",
-                display: "flex",
-                justifyContent: "center",
-                overflowX: "scroll",
-                whiteSpace: "nowrap",
-              }}
-            >
-              {ButtonArray.map((item, index) => (
-                <Spacer key={index} mr={20} mb={40}>
-                  <Button
-                    width={120}
-                    height={40}
-                    variant={onClick === index ? "contained" : "outlined"}
-                    backgroundColor={
-                      onClick === index ? "mediumPurple" : undefined
-                    }
-                    onClick={() => setOnClick(index)}
+      <Spacer mb={50}>
+        {isResponsiveMobile ? (
+          <HederScroll array={ButtonArray} />
+        ) : (
+          <Row width={'100%'} justifyContent="center">
+          <Row>
+            {ButtonArray.map((item, index) => (
+              <Spacer key={index} mr={20} mb={40}>
+                <Button
+                  width={120}
+                  height={40}
+                  variant={onClick === index ? "contained" : "outlined"}
+                  backgroundColor={
+                    onClick === index ? "mediumPurple" : undefined
+                  }
+                  onClick={() => setOnClick(index)}
+                >
+                  <Text
+                    fontSize={10}
+                    color={onClick === index ? undefined : "darkSlateBlue"}
                   >
-                    <Text
-                      fontSize={10}
-                      color={onClick === index ? undefined : "darkSlateBlue"}
-                    >
-                      {item}
-                    </Text>
-                  </Button>
-                </Spacer>
-              ))}
-            </div>
-        </Spacer>
+                    {item}
+                  </Text>
+                </Button>
+              </Spacer>
+            ))}
+          </Row>
+          </Row>
+        )}
+      </Spacer>
 
-      <Row width={"100%"} justifyContent={isResponsiveMobile ? 'center' : "space-between"}>
+      <Row
+        width={"100%"}
+        justifyContent={isResponsiveMobile ? "center" : "space-between"}
+      >
         {!isResponsiveTablet && (
-        <Conteiner>
-          <SwitchCont />
-        </Conteiner>
+          <Conteiner>
+            <SwitchCont />
+          </Conteiner>
         )}
 
         <Spacer mt={23}>
@@ -69,7 +71,7 @@ export const Integration: React.FC = () => {
             paddingRight={40}
             backgroundColor="maximumBluePurple"
             border="2px solid"
-            borderColor='mediumPurple'
+            borderColor="mediumPurple"
           >
             <Row width={"100%"} alignItems="center" flexDirection="column">
               <Spacer mt={-50}>

@@ -141,15 +141,6 @@ export const ImplemenTation: React.FC = () => {
                 Metrics
               </Text>
             </Spacer>
-
-            <Row alignItems="center">
-              <Spacer mr={5}>
-                <CircleIcon style={{ fontSize: 10 }} />
-              </Spacer>
-              <Text fontSize={14} color="darkInttigo">
-                Completion Percent
-              </Text>
-            </Row>
           </Spacer>
         </Spacer>
       </Conteiner>

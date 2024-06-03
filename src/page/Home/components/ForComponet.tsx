@@ -13,6 +13,7 @@ import { colors } from "../../../utils/color/color";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { Button } from "../../../components/Button/Button";
 import { useResponsive } from "../../../utils/hooks/useResponsive";
+import { HederScroll } from "../../../components/HederScroll/HederScroll";
 
 const ButtonArray = ["Small Business", "Small Business", "Small Business"];
 
@@ -21,7 +22,6 @@ export const ForComponent: React.FC = () => {
   const { isResponsiveweb, isResponsiveMobile, isResponsiveTablet } =
     useResponsive();
 
-    
   return (
     <Card
       backgroundColor="ghostWhite"
@@ -34,7 +34,7 @@ export const ForComponent: React.FC = () => {
         width={"100%"}
         justifyContent={isResponsiveweb ? "center" : "space-between"}
       >
-        <Conteiner width={600} height={590}>
+        <Conteiner width={isResponsiveMobile ? "100%" : 600} height={590}>
           <Spacer mt={-50}>
             <Text
               fontSize={45}
@@ -44,6 +44,15 @@ export const ForComponent: React.FC = () => {
             >
               For Companies of all sizes
             </Text>
+            {isResponsiveMobile && (
+            <Conteiner width={"100%"}>
+              <Spacer mb={20}>
+                <HederScroll array={ButtonArray} />
+              </Spacer>
+            </Conteiner>
+
+            )}
+
             <Text
               fontSize={18}
               fontFamily="Arial"
@@ -75,38 +84,32 @@ export const ForComponent: React.FC = () => {
           </Spacer>
         </Conteiner>
 
-        <Conteiner width={isResponsiveMobile ? '100%' : 450} height={590}>
-          <Spacer ml={10} mt={isResponsiveMobile ? 200 : undefined}>
-            <div
-              style={{
-                width: "100%",
-                display: "flex",
-                justifyContent: "center",
-                overflowX: "scroll",
-                whiteSpace: "nowrap",
-              }}
-            >
-              {ButtonArray.map((item, index) => (
-                <Spacer key={index} mr={20} mb={40}>
-                  <Button
-                    width={120}
-                    height={40}
-                    variant={onClick === index ? "contained" : "outlined"}
-                    backgroundColor={
-                      onClick === index ? "mediumPurple" : undefined
-                    }
-                    onClick={() => setOnClick(index)}
-                  >
-                    <Text
-                      fontSize={10}
-                      color={onClick === index ? undefined : "darkSlateBlue"}
+        <Conteiner width={isResponsiveMobile ? "100%" : 450} height={590}>
+          <Spacer ml={10}>
+            {!isResponsiveMobile && (
+              <Row>
+                {ButtonArray.map((item, index) => (
+                  <Spacer key={index} mr={20} mb={40}>
+                    <Button
+                      width={120}
+                      height={40}
+                      variant={onClick === index ? "contained" : "outlined"}
+                      backgroundColor={
+                        onClick === index ? "mediumPurple" : undefined
+                      }
+                      onClick={() => setOnClick(index)}
                     >
-                      {item}
-                    </Text>
-                  </Button>
-                </Spacer>
-              ))}
-            </div>
+                      <Text
+                        fontSize={10}
+                        color={onClick === index ? undefined : "darkSlateBlue"}
+                      >
+                        {item}
+                      </Text>
+                    </Button>
+                  </Spacer>
+                ))}
+              </Row>
+            )}
 
             <Row>
               <Card width={92} height={92}>
@@ -138,41 +141,49 @@ export const ForComponent: React.FC = () => {
 
             <Spacer>
               <Row alignItems="center">
-              {!isResponsiveMobile &&   <CheckCircleIcon
-                  fontSize="small"
-                  style={{ color: colors.maximumBluePurple }}
-                />}
+                {!isResponsiveMobile && (
+                  <CheckCircleIcon
+                    fontSize="small"
+                    style={{ color: colors.maximumBluePurple }}
+                  />
+                )}
                 <Text fontSize={14} color="darkInttigo">
                   High Churn
                 </Text>
               </Row>
 
               <Row alignItems="center">
-              {!isResponsiveMobile &&   <CheckCircleIcon
-                  fontSize="small"
-                  style={{ color: colors.maximumBluePurple }}
-                />}
+                {!isResponsiveMobile && (
+                  <CheckCircleIcon
+                    fontSize="small"
+                    style={{ color: colors.maximumBluePurple }}
+                  />
+                )}
                 <Text fontSize={14} color="darkInttigo">
                   High Employee Burnout
                 </Text>
               </Row>
 
               <Row alignItems="center">
-                {!isResponsiveMobile &&   <CheckCircleIcon
-                  fontSize="small"
-                  style={{ color: colors.maximumBluePurple }}
-                />}
-               
+                {!isResponsiveMobile && (
+                  <CheckCircleIcon
+                    fontSize="small"
+                    style={{ color: colors.maximumBluePurple }}
+                  />
+                )}
+
                 <Text fontSize={14} color="darkInttigo">
                   Reduce Employee Churn
                 </Text>
               </Row>
 
               <Row alignItems="center">
-              {!isResponsiveMobile &&   <CheckCircleIcon
-                  fontSize="small"
-                  style={{ color: colors.maximumBluePurple }}
-                />}
+                {!isResponsiveMobile && (
+                  <CheckCircleIcon
+                    fontSize="small"
+                    style={{ color: colors.maximumBluePurple }}
+                  />
+                )}
                 <Text fontSize={14} color="darkInttigo">
                   Lower Employee Related Costs
                 </Text>

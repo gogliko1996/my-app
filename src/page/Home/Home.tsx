@@ -36,7 +36,6 @@ export const Home: React.FC = () => {
       <ScreenContent>
         <Content>
           <Header />
-
           <Spacer mt={80}>
             <Card
               height={680}

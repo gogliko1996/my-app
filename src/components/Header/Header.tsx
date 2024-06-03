@@ -13,6 +13,12 @@ export const Header: React.FC = () => {
   const {navigation} = useNavigation()
   const { isResponsiveTablet, isResponsiveMobile } = useResponsive();
 
+  const navigate = (props: string) => {
+    if(props === 'Blog') {
+      navigation(screen.blogPage)
+    }
+  }
+
   return (
     <Row alignItems="center" justifyContent='space-between' width={'100%'}>
 
@@ -39,14 +45,14 @@ export const Header: React.FC = () => {
               bodyText={["test1", "test2", "test3"]}
             />
 
-            <Button variant="text" color="darkInttigo" width={71}>
+            <Button variant="text" color="darkInttigo" width={71} onClick={() => navigation(screen.blogPage)}>
               <Text
                 color="darkInttigo"
                 fontSize={12}
                 fontFamily="unset"
                 opacity={"60%"}
               >
-                Employers
+                Blog
               </Text>
             </Button>
             <Button variant="text" color="darkInttigo" width={71}>
@@ -103,7 +109,7 @@ export const Header: React.FC = () => {
           </Row>
         </Spacer>
       ) : (
-        <NavigationButton options={isResponsiveMobile ? options : ["Sign in", "Recquest a Demo",]} />
+        <NavigationButton options={isResponsiveMobile ? options : ["Sign in", "Recquest a Demo"]}  getTitle={(e) => navigate(e)}/>
       )}
     </Row>
   );

@@ -1,14 +1,20 @@
 import React, { useState } from "react";
-import { Card, Image, Row, Text } from "../../../components/ScreenRoot/ScreenContent";
-import { statArray } from "../../../constant/optional";
+import {
+  Card,
+  Image,
+  Row,
+  Text,
+} from "../../../components/ScreenRoot/ScreenContent";
+import { statArray, statArrayTitle } from "../../../constant/optional";
 import { Spacer } from "../../../components/Spacer/Spacer";
 import { useResponsive } from "../../../utils/hooks/useResponsive";
 import { colors } from "../../../utils/color/color";
-import backImage from '../../../utils/image/goal-setting-theory-person-writes-on-board-presenting-to-team.webp'
-import profilImage from '../../../utils/image/pexels-photo-771742.jpeg'
+import backImage from "../../../utils/image/goal-setting-theory-person-writes-on-board-presenting-to-team.webp";
+import profilImage from "../../../utils/image/pexels-photo-771742.jpeg";
 import CircleIcon from "@mui/icons-material/Circle";
 import { MenuButton } from "../../../components/MenuButton/MenuButton";
-
+import { HederScroll } from "../../../components/HederScroll/HederScroll";
+import { Chart } from "../../../components/Chart/Cart";
 
 export const CardsComponents: React.FC = () => {
   const [mouseOver, setMouseOver] = useState<number | string>("");
@@ -75,44 +81,12 @@ export const CardsComponents: React.FC = () => {
           <Card
             backgroundColor="magnoliaWhite"
             width={!isResponsiveweb ? 780 : "100%"}
-            height={isResponsiveMobile ? 793 : 690}
-            paddingLeft={50}
-            paddingRight={50}
+            paddingLeft={isResponsiveMobile ? 15 : 50}
+            paddingRight={isResponsiveMobile ? 15 : 50}
             paddingTop={50}
           >
             <Spacer>
-              {isResponsiveMobile && (
-                <div
-                  style={{
-                    width: "100%",
-                    display: "flex",
-                    justifyContent: "center",
-                    overflowX: "scroll",
-                    whiteSpace: "nowrap",
-                    marginBottom: 20,
-                  }}
-                >
-                  {statArray.map((item, index) => (
-                    <Spacer key={index} mr={20}>
-                      <div
-                        onClick={() => setMouseOver(index)}
-                        style={{ cursor: "pointer" }}
-                      >
-                        <Text
-                          style={{
-                            color:
-                              mouseOver === index
-                                ? colors.mediumPurple
-                                : undefined,
-                          }}
-                        >
-                          {item.title}
-                        </Text>
-                      </div>
-                    </Spacer>
-                  ))}
-                </div>
-              )}
+              {isResponsiveMobile && <HederScroll array={statArrayTitle} />}
 
               <Text
                 color="darkInttigo"
@@ -132,7 +106,7 @@ export const CardsComponents: React.FC = () => {
               <Spacer mt={50}>
                 <Card
                   noShadow
-                  height={393}
+                  // height={ isResponsiveMobile ? 490 : 393}
                   backgroundColor="wite"
                   borderBottomLeftRadius={0}
                   borderBottomRightRadius={0}
@@ -141,53 +115,53 @@ export const CardsComponents: React.FC = () => {
                   paddingRight={30}
                 >
                   <Spacer>
-                  <Spacer mb={-20}>
-                    <Text fontSize={18} fontWeight="bold" color="darkInttigo">
-                      Historical
-                    </Text>
-                  </Spacer>
+                    <Spacer mb={-20}>
+                      <Text fontSize={18} fontWeight="bold" color="darkInttigo">
+                        Historical
+                      </Text>
+                    </Spacer>
 
-                  <Row
-                    width={"100%"}
-                    justifyContent="space-between"
-                    alignItems="center"
-                  >
                     <Row
-                      width={270}
+                      width={"100%"}
                       justifyContent="space-between"
                       alignItems="center"
                     >
-                      <Spacer mr={3}>
-                        <CircleIcon
-                          style={{ fontSize: 10, color: colors.mediumPurple }}
-                        />
-                      </Spacer>
-                      <Text fontSize={12} color="darkInttigo">
-                        Lisa Mathewson
-                      </Text>
-                      <Spacer mr={3}>
-                        <CircleIcon
-                          style={{ fontSize: 10, color: colors.gray }}
-                        />
-                      </Spacer>
-                      <Text fontSize={12} color="darkInttigo">
-                        Company Average
-                      </Text>
-                    </Row>
+                      <Row
+                        width={270}
+                        justifyContent="space-between"
+                        alignItems="center"
+                      >
+                        <Spacer mr={3}>
+                          <CircleIcon
+                            style={{ fontSize: 10, color: colors.mediumPurple }}
+                          />
+                        </Spacer>
+                        <Text fontSize={12} color="darkInttigo">
+                          Lisa Mathewson
+                        </Text>
+                        <Spacer mr={3}>
+                          <CircleIcon
+                            style={{ fontSize: 10, color: colors.gray }}
+                          />
+                        </Spacer>
+                        <Text fontSize={12} color="darkInttigo">
+                          Company Average
+                        </Text>
+                      </Row>
 
-                    <MenuButton
-                      text="Company Average"
-                      color={colors.darkInttigo}
-                      bodyText={["test1", "test2"]}
-                    />
-                  </Row>
-                </Spacer>
+                      <MenuButton
+                        text="Company Average"
+                        color={colors.darkInttigo}
+                        bodyText={["test1", "test2"]}
+                      />
+                    </Row>
+                    <Chart/>
+                  </Spacer>
                 </Card>
               </Spacer>
             </Spacer>
           </Card>
 
-          
           {!isResponsiveweb && (
             <Card
               width={380}
@@ -200,7 +174,7 @@ export const CardsComponents: React.FC = () => {
               <Spacer>
                 <Spacer mb={-16} ml={15}>
                   <Card width={100} height={100}>
-                    <Image src={profilImage}/>
+                    <Image src={profilImage} />
                   </Card>
                 </Spacer>
 
@@ -211,7 +185,7 @@ export const CardsComponents: React.FC = () => {
                   paddingRight={15}
                   paddingBottom={10}
                   paddingTop={10}
-                  backgroundColor='wite'
+                  backgroundColor="wite"
                 >
                   <Spacer>
                     <Text

@@ -1,6 +1,5 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import { useNavigation } from "../../utils/hooks/usenavigation";
 import {
   Card,
   Conteiner,
@@ -21,7 +20,6 @@ import { newRoomArray } from "../../constant/optional";
 import { useResponsive } from "../../utils/hooks/useResponsive";
 import { CangePage } from "../../components/CangePage/CangePage";
 import PhoneIcon from "@mui/icons-material/Phone";
-import MailIcon from "@mui/icons-material/Mail";
 import styled from "styled-components";
 
 export const Newroom: React.FC = () => {
@@ -149,7 +147,7 @@ export const Newroom: React.FC = () => {
                   : undefined
               }
             >
-              <Card width={580} height={530} backgroundColor="ghostWhite">
+              <Card width={isResponsiveMobile ? '90%' : 580} height={530} backgroundColor="ghostWhite">
                 <Spacer
                   ml={isResponsiveMobile ? 30 : 100}
                   mt={80}
@@ -202,7 +200,7 @@ export const Newroom: React.FC = () => {
               </Card>
 
               <Spacer mb={isResponsiveMobile ? 40 : undefined}>
-                <Conteiner width={380}>
+                <Conteiner width={isResponsiveMobile ? '90%' : 380}>
                   <Spacer mt={-25} pl={10} pr={10}>
                     <Text fontSize={24} fontWeight="bold" color="darkInttigo">
                       For press inquiries or speaking engagements, please
@@ -240,7 +238,7 @@ export const Newroom: React.FC = () => {
                           </Text>
                         </Spacer>
 
-                        <Select name="cars" id="cars" width={"100%"}>
+                        <Select width={"100%"}>
                           <option value="Select">Select</option>
                           <option value="test1">test1</option>
                           <option value="test2">test2</option>

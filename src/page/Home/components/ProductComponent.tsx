@@ -18,57 +18,20 @@ import { useResponsive } from "../../../utils/hooks/useResponsive";
 import image from "../../../utils/image/pexels-photo-771742.jpeg";
 import { MenuButton } from "../../../components/MenuButton/MenuButton";
 import CircleIcon from "@mui/icons-material/Circle";
+import { Swiper, SwiperSlide } from "swiper/react";
 
-export const ProductHeder: React.FC = () => {
-  const [onClick, setOnClick] = useState<number | string>("");
-  return (
-    <>
-      <div
-        style={{
-          width: "100%",
-          display: "flex",
-          justifyContent: "center",
-          overflowX: "scroll",
-          whiteSpace: "nowrap",
-        }}
-      >
-        {productarArray.map((item, index) => (
-          <Spacer key={index} mr={40}>
-            <div
-              onClick={() => setOnClick(index)}
-              style={{
-                cursor: "pointer",
-                borderBottom:
-                  onClick === index
-                    ? `2px solid ${colors.mediumPurple}`
-                    : undefined,
-              }}
-            >
-              <Text
-                color="russianViolet"
-                opacity={"60%"}
-                style={{
-                  marginBottom: 10,
-                  color: onClick === index ? colors.mediumPurple : undefined,
-                }}
-              >
-                {item}
-              </Text>
-            </div>
-          </Spacer>
-        ))}
-      </div>
-      <Line />
-    </>
-  );
-};
+import "swiper/css";
+import { HederScroll } from "../../../components/HederScroll/HederScroll";
+import { Chart } from "../../../components/Chart/Cart";
+
+
 
 export const ProductComponent: React.FC = () => {
   const { isResponsiveMobile, isResponsiveTablet } = useResponsive();
   return (
     <>
       <Spacer mb={80}>
-        <ProductHeder />
+        <HederScroll/>
       </Spacer>
 
       <Row
@@ -78,11 +41,16 @@ export const ProductComponent: React.FC = () => {
       >
         {!isResponsiveMobile ||
           (isResponsiveTablet && (
-            <Row width={isResponsiveMobile ? 380 : 560} height={590} flexDirection="column" justifyContent="center">
+            <Row
+              width={isResponsiveMobile ? 380 : 560}
+              height={590}
+              flexDirection="column"
+              justifyContent="center"
+            >
               <Spacer ml={isResponsiveMobile ? 50 : 85}>
                 <Card
-                   width={isResponsiveMobile ? 280 : 380}
-                   height={ isResponsiveMobile? 70 : 90}
+                  width={isResponsiveMobile ? 280 : 380}
+                  height={isResponsiveMobile ? 70 : 90}
                   noShadow
                   borderBottomLeftRadius={0}
                   borderBottomRightRadius={0}
@@ -138,14 +106,14 @@ export const ProductComponent: React.FC = () => {
                       bodyText={["test1", "test2"]}
                     />
                   </Row>
+                  <Chart/>
                 </Spacer>
               </Card>
-
 
               <Spacer ml={isResponsiveMobile ? 50 : 85}>
                 <Card
                   width={isResponsiveMobile ? 280 : 380}
-                  height={ isResponsiveMobile? 70 : 90}
+                  height={isResponsiveMobile ? 70 : 90}
                   noShadow
                   borderTopLeftRadius={0}
                   borderTopRightRadius={0}
@@ -293,6 +261,7 @@ export const ProductComponent: React.FC = () => {
                       bodyText={["test1", "test2"]}
                     />
                   </Row>
+                  <Chart/>
                 </Spacer>
               </Card>
 

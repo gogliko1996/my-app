@@ -3,22 +3,22 @@ import IconButton from "@mui/material/IconButton";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { NavigationButtonProps } from "./NavigationButton.props";
-import MenuIcon from '@mui/icons-material/Menu';
+import MenuIcon from "@mui/icons-material/Menu";
 import { colors } from "../../utils/color/color";
-
-
 
 const ITEM_HEIGHT = 48;
 export const NavigationButton: React.FC<NavigationButtonProps> = (props) => {
-const {options} =props
+  const { options, getTitle } = props;
 
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   };
-  const handleClose = () => {
+  const handleClose = (option?: string) => {
     setAnchorEl(null);
+
+    getTitle && getTitle(option);
   };
 
   return (
@@ -31,7 +31,7 @@ const {options} =props
         aria-haspopup="true"
         onClick={handleClick}
       >
-        <MenuIcon style={{fontSize: 30, color: colors.black}} />
+        <MenuIcon style={{ fontSize: 30, color: colors.black }} />
       </IconButton>
       <Menu
         id="long-menu"
@@ -40,7 +40,7 @@ const {options} =props
         }}
         anchorEl={anchorEl}
         open={open}
-        onClose={handleClose}
+        onClose={() => handleClose()}
         PaperProps={{
           style: {
             maxHeight: ITEM_HEIGHT * 4.5,
@@ -48,15 +48,16 @@ const {options} =props
           },
         }}
       >
-        {options && options.map((option) => (
-          <MenuItem
-            key={option}
-            selected={option === "Pyxis"}
-            onClick={handleClose}
-          >
-            {option}
-          </MenuItem>
-        ))}
+        {options &&
+          options.map((option) => (
+            <MenuItem
+              key={option}
+              selected={option === "Pyxis"}
+              onClick={() => handleClose(option)}
+            >
+              {option}
+            </MenuItem>
+          ))}
       </Menu>
     </div>
   );
