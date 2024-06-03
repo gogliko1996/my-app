@@ -4,5 +4,9 @@ export const screen = {
     integrationPage: '/integrationPage',
     integrationPagedetails: '/integrationPagedetails',
     blogPage: '/blogPage',
-    articleDetail: '/articleDetail'
+    articleDetail: '/articleDetail',
+    requestDemo: '/requestDemo',
+    jobs: '/jobs',
+    jobsDetails: '/jobsDetails',
+    aboutUs: '/aboutUs'
 }

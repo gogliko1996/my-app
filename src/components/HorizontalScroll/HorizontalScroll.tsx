@@ -5,25 +5,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 import { useResponsive } from "../../utils/hooks/useResponsive";
+import { scroolNameArray } from "../../constant/optional";
 
 
-const scroolNameArray = [
-  "SAMSUNG",
-  "INTEL",
-  "MICROSOFT",
-  "GOLDMAN",
-  "SONI",
-  "BOENIG",
-  "APPl",
-  "GOLDMAN",
-  "SONI",
-  "BOENIG",
-  "APPl",
-  "GOLDMAN",
-  "SONI",
-  "BOENIG",
-  "APPl",
-];
+
 
 export const HorizontalScroll: React.FC = () => {
   const { isResponsiveMobile } = useResponsive();

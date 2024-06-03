@@ -4,53 +4,23 @@ import { Card, Conteiner, Image, Row, Text } from "../ScreenRoot/ScreenContent";
 import styled from "styled-components";
 import { colors } from "../../utils/color/color";
 import { Swiper, SwiperSlide } from "swiper/react";
-import sliderImage from '../../utils/image/1-intro-photo-final.jpg'
-import sliderImage1 from '../../utils/image/download.jpeg'
-import sliderImage2 from '../../utils/image/pexels-photo-771742.jpeg'
 
 import "swiper/css";
 import { useResponsive } from "../../utils/hooks/useResponsive";
+import { array } from "../../constant/optional";
+import { SliderProps } from "./Slider.props";
 
-const array = [
-    {
-        title: 'Sundar Pichai',
-        body: 'CEO Google',
-        detaols: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
-        image: sliderImage
-    },
-    {
-        title: 'Tim Cook',
-        body: 'CEO Apple',
-        detaols: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
-        image: sliderImage2
-    },
-    {
-        title: 'Hyun-Suk Kim',
-        body: 'CEO Samsung',
-        detaols: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
-        image: sliderImage
-    },
-    {
-        title: 'gyog',
-        body: 'Usa mack',
-        detaols: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
-        image: sliderImage2
-    },
-    {
-        title: 'tsd-ddd',
-        body: 'Daf anume',
-        detaols: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
-        image: sliderImage1
-    }
-];
+import "swiper/css";
 
-export const Slider: React.FC = () => {
+export const Slider: React.FC<SliderProps> = (props) => {
+  const { quantity } = props;
+
   const { isResponsiveTablet, isResponsiveMobile } = useResponsive();
 
   return (
     <Swiper
       spaceBetween={10}
-      slidesPerView={isResponsiveTablet ? 2 :  3}
+      slidesPerView={quantity ? quantity : isResponsiveTablet ? 2 : 3}
     >
       {array.map((item, index) => (
         <SwiperSlide>
@@ -67,7 +37,7 @@ export const Slider: React.FC = () => {
                   borderTopLeftRadius={12}
                   borderTopRightRadius={12}
                 >
-                    <Image src={item.image}/>
+                  <Image src={item.image} />
                 </Card>
                 <Conteiner width={150}>
                   <Spacer mt={-10} ml={10}>

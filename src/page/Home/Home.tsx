@@ -12,7 +12,6 @@ import {
 import { Header } from "../../components/Header/Header";
 import { Spacer } from "../../components/Spacer/Spacer";
 import { Button } from "../../components/Button/Button";
-import { ImagDiv } from "./Home.style";
 import { HorizontalScroll } from "../../components/HorizontalScroll/HorizontalScroll";
 import { CardsComponents } from "./components/CardsComponents";
 import { useResponsive } from "../../utils/hooks/useResponsive";
@@ -26,6 +25,7 @@ import { ImplemenTation } from "./components/ImplemenTation";
 import { Slider } from "../../components/Slider/Slider";
 import { Footer } from "../../components/Footer/Footer";
 import { screen } from "../../routes/constants";
+import noBackground from "../../utils/image/noBackground.png";
 
 export const Home: React.FC = () => {
   const { navigation } = useNavigation();
@@ -97,9 +97,22 @@ export const Home: React.FC = () => {
 
                 {!isResponsiveTablet && (
                   <Spacer mt={45}>
-                    <ImagDiv style={{ backgroundColor: "#fff", width: 450 }}>
-                      <Image src={calendarImage} />
-                    </ImagDiv>
+                    <Card
+                    width={500}
+                    height={564}
+                    noShadow
+                    borderBottomLeftRadius={0}
+                    borderBottomRightRadius={30}
+                    borderTopLeftRadius={30}
+                    borderTopRightRadius={0}
+                    backgroundImage={calendarImage}
+                    >
+                      <Spacer ml={-300} mt={2}>
+                        <Conteiner width={500} height={553} style={{zIndex: 100}}>
+                        <Image src={noBackground} />
+                        </Conteiner>
+                      </Spacer>
+                    </Card>
                   </Spacer>
                 )}
               </Row>
@@ -284,7 +297,7 @@ export const Home: React.FC = () => {
           </Spacer>
         </Content>
       </ScreenContent>
-      
+
       <Spacer>
         <Footer />
       </Spacer>

@@ -11,11 +11,14 @@ import icon8 from "../utils/icons/youtube.png";
 import image from '../utils/image/jpg-vs-jpeg-1024x512.jpg'
 import image1 from '../utils/image/pngtree-landscape-jpg-wallpapers-free-download-image_2573540.jpg'
 import image2 from '../utils/image/compresser-image-outils.jpg'
+import sliderImage from '../utils/image/1-intro-photo-final.jpg'
+import sliderImage1 from '../utils/image/download.jpeg'
+import sliderImage2 from '../utils/image/pexels-photo-771742.jpeg'
 
 export const options = [
   "Blog",
-  "Employees",
-  "Plans",
+  "NewRoom",
+  "Jobs",
   "Sign in",
   "Recquest a Demo",
 ];
@@ -56,6 +59,16 @@ export const productarArray = [
   "Vacation Planning",
   "Experiences & Activities",
   "Conversion",
+];
+
+export const scroolNameArray = [
+  "SAMSUNG",
+  "INTEL",
+  "MICROSOFT",
+  "GOLDMAN",
+  "SONI",
+  "BOENIG",
+  "APPl",
 ];
 
 export const footerSecurity = [
@@ -123,6 +136,39 @@ export const  newsPaperArray = [
     image: image2
   },
 ]
+
+export const array = [
+  {
+      title: 'Sundar Pichai',
+      body: 'CEO Google',
+      detaols: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
+      image: sliderImage
+  },
+  {
+      title: 'Tim Cook',
+      body: 'CEO Apple',
+      detaols: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
+      image: sliderImage2
+  },
+  {
+      title: 'Hyun-Suk Kim',
+      body: 'CEO Samsung',
+      detaols: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
+      image: sliderImage
+  },
+  {
+      title: 'gyog',
+      body: 'Usa mack',
+      detaols: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
+      image: sliderImage2
+  },
+  {
+      title: 'tsd-ddd',
+      body: 'Daf anume',
+      detaols: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
+      image: sliderImage1
+  }
+];
 
 export const supportedarray = [
   {
@@ -470,3 +516,30 @@ export const newRoomArray = [
     body: "68% of employees feel refreshed, focused and more productive after time off and are 2x more likely to feel satisfied with their jobs...",
   },
 ];
+
+export const jobsArray = [
+  {
+    Title:'Office Manager',
+    jobsType: 'Office',
+    location: '78 South West 7th Street Miami, FL 33130',
+    locationType:'Miami, US'
+  },
+  {
+    Title:'Backend Developer',
+    jobsType: 'Backend',
+    location: 'Remote',
+    locationType:'Remotely'
+  },
+  {
+    Title:'Frontend Developer',
+    jobsType: 'Frontend',
+    location: 'Remote US timezone',
+    locationType:'US Timezone'
+  },
+  {
+    Title:'Social Media Manager',
+    jobsType: 'Social Media',
+    location: 'Remote',
+    locationType:'Remote'
+  },
+]

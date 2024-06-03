@@ -30,8 +30,8 @@ export const NewsPaper: React.FC = () => {
         alignItems={isResponsiveMobile ? "center" : undefined}
       >
         {newsPaperArray.map((item, index) => (
-          <Conteiner width={379} key={index}>
-            <Card height={279} backgroundImage={item.image}></Card>
+          <Conteiner width={isResponsiveMobile ? '80%' : 379} key={index}>
+            <Card height={ 279} backgroundImage={item.image}></Card>
             <Text color="MediumSlateBlue" fontWeight="bold" fontSize={12}>
               {item.type}
             </Text>

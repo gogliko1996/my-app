@@ -14,6 +14,8 @@ export const colors = {
   ghostWhite: "#F3F5FE",
   maximumBluePurple: "#BCB0FC",
   darkghostWhite: "#F7F4FB",
+  honeydew: '#EAFAF2',
+  emeraldGreen: '#2DCD7A',
 };
 
 export type ColorTypes = keyof typeof colors;

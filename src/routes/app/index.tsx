@@ -8,6 +8,10 @@ import { screen } from "../constants";
 import { IntegrationPagedetails } from "../../page/IntegrationPage/components/IntegrationPagedetails";
 import { BlogPage } from "../../page/BlogPage/BlogPage";
 import { ArticleDetail } from "../../page/ArticleDetail/ArticleDetail";
+import { RequestDemo } from "../../page/RequestDemo/RequestDemo";
+import { Jobs } from "../../page/Jobs/Jobs";
+import { JobsDetails } from "../../page/JobsDetails/JobsDetails";
+import { AboutUs } from "../../page/AboutUs/AboutUs";
 
 export const AppRouter = React.memo(() => {
   return (
@@ -19,6 +23,10 @@ export const AppRouter = React.memo(() => {
         <Route path={screen.integrationPagedetails} element={<IntegrationPagedetails />} />
         <Route path={screen.blogPage} element={<BlogPage />} />
         <Route path={screen.articleDetail} element={<ArticleDetail />} />
+        <Route path={screen.requestDemo} element={<RequestDemo />} />
+        <Route path={screen.jobs} element={<Jobs />} />
+        <Route path={screen.jobsDetails} element={<JobsDetails />} />
+        <Route path={screen.aboutUs} element={<AboutUs />} />
       </Routes>
     </BrowserRouter>
   );

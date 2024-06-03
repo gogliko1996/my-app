@@ -8,32 +8,57 @@ import { NavigationButton } from "../NavigationButton/NavigationButton";
 import { options } from "../../constant/optional";
 import { useNavigation } from "../../utils/hooks/usenavigation";
 import { screen } from "../../routes/constants";
+import { HeaderProps } from "./Header.props";
 
-export const Header: React.FC = () => {
-  const {navigation} = useNavigation()
+export const Header: React.FC<HeaderProps> = (props) => {
+  const { noTitle = false } = props;
+
+  const { navigation } = useNavigation();
   const { isResponsiveTablet, isResponsiveMobile } = useResponsive();
 
-  const navigate = (props: string) => {
-    if(props === 'Blog') {
-      navigation(screen.blogPage)
+  const responsNavigate = (props: string) => {
+    if (props === "Blog") {
+      navigation(screen.blogPage);
     }
-  }
+
+    if (props === "Recquest a Demo") {
+      navigation(screen.requestDemo);
+    }
+    if (props === "NewRoom") {
+      navigation(screen.newroom);
+    }
+    if (props === "Jobs") {
+      navigation(screen.jobs);
+    }
+  };
 
   return (
-    <Row alignItems="center" justifyContent='space-between' width={'100%'}>
-
+    <Row alignItems="center" justifyContent="space-between" width={"100%"}>
       <Row alignItems="center">
         <Spacer mr={7}>
           <div style={{ backgroundColor: "#000", width: 29, height: 32 }} />
         </Spacer>
         <Spacer mr={50}>
-          <Row alignItems="center" onClick={() => navigation(screen.home)} style={{cursor: 'pointer'}}>
-            <Text fontSize={20} fontFamily='Arial' fontWeight='bold' color='russianViolet'>PTO</Text>
-            <Text fontSize={20} color='russianViolet'>GENIUS</Text>
+          <Row
+            alignItems="center"
+            onClick={() => navigation(screen.home)}
+            style={{ cursor: "pointer" }}
+          >
+            <Text
+              fontSize={20}
+              fontFamily="Arial"
+              fontWeight="bold"
+              color="russianViolet"
+            >
+              PTO
+            </Text>
+            <Text fontSize={20} color="russianViolet">
+              GENIUS
+            </Text>
           </Row>
         </Spacer>
 
-        {!isResponsiveMobile && (
+        {!noTitle && !isResponsiveMobile && (
           <Row
             width={550}
             justifyContent="space-between"
@@ -45,7 +70,12 @@ export const Header: React.FC = () => {
               bodyText={["test1", "test2", "test3"]}
             />
 
-            <Button variant="text" color="darkInttigo" width={71} onClick={() => navigation(screen.blogPage)}>
+            <Button
+              variant="text"
+              color="darkInttigo"
+              width={71}
+              onClick={() => navigation(screen.blogPage)}
+            >
               <Text
                 color="darkInttigo"
                 fontSize={12}
@@ -55,24 +85,24 @@ export const Header: React.FC = () => {
                 Blog
               </Text>
             </Button>
-            <Button variant="text" color="darkInttigo" width={71}>
+            <Button variant="text" color="darkInttigo" width={71} onClick={() => navigation(screen.newroom)}>
               <Text
                 color="darkInttigo"
                 fontSize={12}
                 fontFamily="unset"
                 opacity={"60%"}
               >
-                Employees
+                NewRoom
               </Text>
             </Button>
-            <Button variant="text" color="darkInttigo" width={71}>
+            <Button variant="text" color="darkInttigo" width={71} onClick={() => navigation(screen.jobs)}>
               <Text
                 color="darkInttigo"
                 fontSize={12}
                 fontFamily="unset"
                 opacity={"60%"}
               >
-                Plans
+                Jobs
               </Text>
             </Button>
 
@@ -97,19 +127,27 @@ export const Header: React.FC = () => {
                 Sign in
               </Text>
             </Button>
-            <Button
-              variant="contained"
-              color="wite"
-              backgroundColor="mediumPurple"
-            >
-              <Text color="wite" fontSize={10} fontFamily="unset">
-                Recquest a Demo
-              </Text>
-            </Button>
+            {!noTitle && (
+              <Button
+                variant="contained"
+                color="wite"
+                backgroundColor="mediumPurple"
+                onClick={() => navigation(screen.requestDemo)}
+              >
+                <Text color="wite" fontSize={10} fontFamily="unset">
+                  Recquest a Demo
+                </Text>
+              </Button>
+            )}
           </Row>
         </Spacer>
       ) : (
-        <NavigationButton options={isResponsiveMobile ? options : ["Sign in", "Recquest a Demo"]}  getTitle={(e) => navigate(e)}/>
+        <NavigationButton
+          options={
+            isResponsiveMobile ? options : ["Sign in", "Recquest a Demo"]
+          }
+          getTitle={(e) => responsNavigate(e)}
+        />
       )}
     </Row>
   );

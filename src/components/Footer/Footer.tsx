@@ -16,14 +16,19 @@ import {
 } from "../../constant/optional";
 import { MenuButton } from "../MenuButton/MenuButton";
 import AddIcon from "@mui/icons-material/Add";
+import { FooterProps } from "./Footer.props";
+import { useNavigation } from "../../utils/hooks/usenavigation";
+import { screen } from "../../routes/constants";
 
-export const Footer: React.FC = () => {
-  const { isResponsiveTablet, isResponsiveMobile } = useResponsive();
+export const Footer: React.FC<FooterProps> = ({noTitle = false}) => {
+  const { isResponsiveMobile } = useResponsive();
+  const { navigation } = useNavigation();
 
   return (
     <Conteiner width={"100%"} backgroundColor="darkSlateBlue">
       <Spacer mr={ isResponsiveMobile ? 25 : 120} ml={isResponsiveMobile ? 25 : 120} pt={50}>
-        <Row width={"100%"} justifyContent="space-between">
+
+        {!noTitle &&   <Row width={"100%"} justifyContent="space-between">
           <Conteiner>
             <Spacer mt={-25} mb={20}>
               <Text fontSize={25} fontWeight="bold" color="wite">
@@ -36,17 +41,18 @@ export const Footer: React.FC = () => {
           </Conteiner>
 
           <Row>
-            <Spacer mb={20} mr={10}>
-              <Button variant="contained" backgroundColor="darkSlateBlue">
-                <Text fontSize={10}>Contact us</Text>
+            <Spacer mb={20} mr={10} >
+              <Button variant="contained" backgroundColor="darkSlateBlue" onClick={() => navigation(screen.aboutUs)}>
+                <Text fontSize={10}>About us</Text>
               </Button>
             </Spacer>
 
-            <Button variant="contained" backgroundColor="mediumPurple">
+            <Button variant="contained" backgroundColor="mediumPurple" onClick={() => navigation(screen.requestDemo)}>
               <Text fontSize={10}> Request a Demo</Text>
             </Button>
           </Row>
-        </Row>
+        </Row>}
+       
 
         <Spacer mt={50} mb={isResponsiveMobile ? 0 : 50}>
           <Line />
