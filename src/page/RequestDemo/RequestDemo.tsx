@@ -36,6 +36,8 @@ export const RequestDemo: React.FC = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
   const { isResponsiveMobile, isResponsiveweb } = useResponsive();
 
+  const sliceScroolNameArray = scroolNameArray.slice(0,6)
+
   return (
     <>
       <ScreenContent>
@@ -110,7 +112,7 @@ export const RequestDemo: React.FC = () => {
                     {!isResponsiveMobile && (
                       <Spacer>
                         <Row width={"100%"} justifyContent="space-between">
-                          {scroolNameArray.map((item, index) => (
+                          {sliceScroolNameArray.map((item, index) => (
                             <Spacer key={index} mr={50}>
                               <Text
                                 color="wite"

@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Card,
   Image,
   Row,
   Text,
 } from "../../../components/ScreenRoot/ScreenContent";
-import { statArray, statArrayTitle } from "../../../constant/optional";
+import { statArrayTitle } from "../../../constant/optional";
 import { Spacer } from "../../../components/Spacer/Spacer";
 import { useResponsive } from "../../../utils/hooks/useResponsive";
 import { colors } from "../../../utils/color/color";
@@ -15,64 +15,18 @@ import CircleIcon from "@mui/icons-material/Circle";
 import { MenuButton } from "../../../components/MenuButton/MenuButton";
 import { HederScroll } from "../../../components/HederScroll/HederScroll";
 import { Chart } from "../../../components/Chart/Cart";
+import { ButtonCards } from "../../../components/ButtonCard/ButtonCard";
+
+
 
 export const CardsComponents: React.FC = () => {
-  const [mouseOver, setMouseOver] = useState<number | string>("");
 
   const { isResponsiveMobile, isResponsiveweb } = useResponsive();
 
   return (
     <>
-      {!isResponsiveMobile && (
-        <Row width={"100%"} justifyContent={"space-between"}>
-          {statArray.map((item, index) => (
-            <Spacer mt={mouseOver === index ? 1 : 20} mb={10} mr={10}>
-              <Card
-                style={{
-                  backgroundColor:
-                    mouseOver === index ? colors.darkSlateBlue : undefined,
-                }}
-                width={280}
-                height={229}
-                key={index}
-                paddingTop={20}
-                paddingLeft={20}
-                paddingRight={20}
-                onMouseOver={() => setMouseOver(index)}
-                onMouseOut={() => setMouseOver("")}
-              >
-                <Spacer>
-                  <Text
-                    style={{
-                      color: mouseOver === index ? colors.wite : undefined,
-                    }}
-                    fontSize={18}
-                    fontFamily="Arial"
-                    fontWeight="bold"
-                    color="eigengrau"
-                    textAlign="center"
-                  >
-                    {item.title}
-                  </Text>
-                  <Spacer mt={40}>
-                    <Text
-                      style={{
-                        color: mouseOver === index ? colors.wite : undefined,
-                      }}
-                      textAlign="center"
-                      fontSize={14}
-                      color="purpleNavy"
-                    >
-                      {item.body}
-                    </Text>
-                  </Spacer>
-                </Spacer>
-              </Card>
-            </Spacer>
-          ))}
-        </Row>
-      )}
-
+{!isResponsiveMobile &&    <ButtonCards/>}
+  
       <Spacer mt={20}>
         <Row
           width={"100%"}
@@ -155,7 +109,7 @@ export const CardsComponents: React.FC = () => {
                         bodyText={["test1", "test2"]}
                       />
                     </Row>
-                    <Chart/>
+                    <Chart />
                   </Spacer>
                 </Card>
               </Spacer>

@@ -12,6 +12,7 @@ import { RequestDemo } from "../../page/RequestDemo/RequestDemo";
 import { Jobs } from "../../page/Jobs/Jobs";
 import { JobsDetails } from "../../page/JobsDetails/JobsDetails";
 import { AboutUs } from "../../page/AboutUs/AboutUs";
+import { LawsLandingPages } from "../../page/LawsLandingPages/LawsLandingPages";
 
 export const AppRouter = React.memo(() => {
   return (
@@ -27,6 +28,7 @@ export const AppRouter = React.memo(() => {
         <Route path={screen.jobs} element={<Jobs />} />
         <Route path={screen.jobsDetails} element={<JobsDetails />} />
         <Route path={screen.aboutUs} element={<AboutUs />} />
+        <Route path={screen.lawsLandingPages} element={<LawsLandingPages />} />
       </Routes>
     </BrowserRouter>
   );

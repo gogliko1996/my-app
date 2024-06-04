@@ -24,6 +24,27 @@ export const Footer: React.FC<FooterProps> = ({noTitle = false}) => {
   const { isResponsiveMobile } = useResponsive();
   const { navigation } = useNavigation();
 
+  const navigate = (text: string) => {
+    if(text === 'About PTO Genius') {
+      navigation(screen.aboutUs)
+    }
+    if(text === 'About PTO Genius') {
+      navigation(screen.aboutUs)
+    }
+    if(text === 'Newsroom') {
+      navigation(screen.newroom)
+    }
+    if(text === 'Jobs') {
+      navigation(screen.jobs)
+    }
+    if(text === 'Laws Landing Pages') {
+      navigation(screen.lawsLandingPages)
+    }
+    if(text === 'Integrations') {
+      navigation(screen.integrationPage)
+    }
+  }
+
   return (
     <Conteiner width={"100%"} backgroundColor="darkSlateBlue">
       <Spacer mr={ isResponsiveMobile ? 25 : 120} ml={isResponsiveMobile ? 25 : 120} pt={50}>
@@ -42,8 +63,8 @@ export const Footer: React.FC<FooterProps> = ({noTitle = false}) => {
 
           <Row>
             <Spacer mb={20} mr={10} >
-              <Button variant="contained" backgroundColor="darkSlateBlue" onClick={() => navigation(screen.aboutUs)}>
-                <Text fontSize={10}>About us</Text>
+              <Button variant="contained" backgroundColor="darkSlateBlue" >
+                <Text fontSize={10}>Contact us</Text>
               </Button>
             </Spacer>
 
@@ -135,7 +156,7 @@ export const Footer: React.FC<FooterProps> = ({noTitle = false}) => {
                   Our Software
                 </Text>
                 {footerSoftware.map((item, index) => (
-                  <div key={index} style={{ cursor: "pointer" }}>
+                  <div key={index} style={{ cursor: "pointer" }} onClick={() => navigate(item)}>
                     <Text fontSize={14} opacity={"70%"} color="wite">
                       {item}
                     </Text>
@@ -148,7 +169,7 @@ export const Footer: React.FC<FooterProps> = ({noTitle = false}) => {
                   Company
                 </Text>
                 {footerCompani.map((item, index) => (
-                  <div key={index} style={{ cursor: "pointer" }}>
+                  <div key={index} style={{ cursor: "pointer" }} onClick={() =>  navigate(item)}>
                     <Text fontSize={14} opacity={"70%"} color="wite">
                       {item}
                     </Text>
@@ -204,6 +225,7 @@ export const Footer: React.FC<FooterProps> = ({noTitle = false}) => {
               color={colors.wite}
               text="Our Software"
               bodyText={footerSoftware}
+              getText={(e) => navigate(e)}
             />
 
             <Spacer>
@@ -217,6 +239,7 @@ export const Footer: React.FC<FooterProps> = ({noTitle = false}) => {
               color={colors.wite}
               text="Company"
               bodyText={footerCompani}
+              getText={(e) => navigate(e)}
             />
 
             <Spacer mt={10} mb={10}>

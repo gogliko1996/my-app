@@ -8,12 +8,12 @@ import icon5 from "../utils/icons/instagram.png";
 import icon6 from "../utils/icons/logo.png";
 import icon7 from "../utils/icons/whatsapp.png";
 import icon8 from "../utils/icons/youtube.png";
-import image from '../utils/image/jpg-vs-jpeg-1024x512.jpg'
-import image1 from '../utils/image/pngtree-landscape-jpg-wallpapers-free-download-image_2573540.jpg'
-import image2 from '../utils/image/compresser-image-outils.jpg'
-import sliderImage from '../utils/image/1-intro-photo-final.jpg'
-import sliderImage1 from '../utils/image/download.jpeg'
-import sliderImage2 from '../utils/image/pexels-photo-771742.jpeg'
+import image from "../utils/image/jpg-vs-jpeg-1024x512.jpg";
+import image1 from "../utils/image/pngtree-landscape-jpg-wallpapers-free-download-image_2573540.jpg";
+import image2 from "../utils/image/compresser-image-outils.jpg";
+import sliderImage from "../utils/image/1-intro-photo-final.jpg";
+import sliderImage1 from "../utils/image/download.jpeg";
+import sliderImage2 from "../utils/image/pexels-photo-771742.jpeg";
 
 export const options = [
   "Blog",
@@ -69,6 +69,13 @@ export const scroolNameArray = [
   "SONI",
   "BOENIG",
   "APPl",
+  "SAMSUNG",
+  "INTEL",
+  "MICROSOFT",
+  "GOLDMAN",
+  "SONI",
+  "BOENIG",
+  "APPl",
 ];
 
 export const footerSecurity = [
@@ -90,7 +97,7 @@ export const footerSoftware = [
 ];
 export const footerCompani = [
   "About PTO Genius",
-  "Customers",
+  "Laws Landing Pages",
   "Newsroom",
   "Jobs",
 ];
@@ -116,58 +123,63 @@ export const SwitchContArray = [
   },
 ];
 
-export const  newsPaperArray = [
+export const newsPaperArray = [
   {
-    title:'ING choisit Leo Burnett pour sa communication...',
-    type: 'PRODUCT ANALYTICS',
-    body: 'As a product manager, deep-diving into problems like high churn, bugs, and crashes is part of the job. As a product manager, deep-diving into...',
-    image: image
+    title: "ING choisit Leo Burnett pour sa communication...",
+    type: "PRODUCT ANALYTICS",
+    body: "As a product manager, deep-diving into problems like high churn, bugs, and crashes is part of the job. As a product manager, deep-diving into...",
+    image: image,
   },
   {
-    title:'ING choisit Leo Burnett pour sa communication...',
-    type: 'PRODUCT ANALYTICS',
-    body: 'As a product manager, deep-diving into problems like high churn, bugs, and crashes is part of the job. As a product manager, deep-diving into...',
-    image: image1
+    title: "ING choisit Leo Burnett pour sa communication...",
+    type: "PRODUCT ANALYTICS",
+    body: "As a product manager, deep-diving into problems like high churn, bugs, and crashes is part of the job. As a product manager, deep-diving into...",
+    image: image1,
   },
   {
-    title:'ING choisit Leo Burnett pour sa communication...',
-    type: 'PRODUCT ANALYTICS',
-    body: 'As a product manager, deep-diving into problems like high churn, bugs, and crashes is part of the job. As a product manager, deep-diving into...',
-    image: image2
+    title: "ING choisit Leo Burnett pour sa communication...",
+    type: "PRODUCT ANALYTICS",
+    body: "As a product manager, deep-diving into problems like high churn, bugs, and crashes is part of the job. As a product manager, deep-diving into...",
+    image: image2,
   },
-]
+];
 
 export const array = [
   {
-      title: 'Sundar Pichai',
-      body: 'CEO Google',
-      detaols: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
-      image: sliderImage
+    title: "Sundar Pichai",
+    body: "CEO Google",
+    detaols:
+      "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+    image: sliderImage,
   },
   {
-      title: 'Tim Cook',
-      body: 'CEO Apple',
-      detaols: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
-      image: sliderImage2
+    title: "Tim Cook",
+    body: "CEO Apple",
+    detaols:
+      "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+    image: sliderImage2,
   },
   {
-      title: 'Hyun-Suk Kim',
-      body: 'CEO Samsung',
-      detaols: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
-      image: sliderImage
+    title: "Hyun-Suk Kim",
+    body: "CEO Samsung",
+    detaols:
+      "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+    image: sliderImage,
   },
   {
-      title: 'gyog',
-      body: 'Usa mack',
-      detaols: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
-      image: sliderImage2
+    title: "gyog",
+    body: "Usa mack",
+    detaols:
+      "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+    image: sliderImage2,
   },
   {
-      title: 'tsd-ddd',
-      body: 'Daf anume',
-      detaols: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
-      image: sliderImage1
-  }
+    title: "tsd-ddd",
+    body: "Daf anume",
+    detaols:
+      "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+    image: sliderImage1,
+  },
 ];
 
 export const supportedarray = [
@@ -519,27 +531,87 @@ export const newRoomArray = [
 
 export const jobsArray = [
   {
-    Title:'Office Manager',
-    jobsType: 'Office',
-    location: '78 South West 7th Street Miami, FL 33130',
-    locationType:'Miami, US'
+    Title: "Office Manager",
+    jobsType: "Office",
+    location: "78 South West 7th Street Miami, FL 33130",
+    locationType: "Miami, US",
   },
   {
-    Title:'Backend Developer',
-    jobsType: 'Backend',
-    location: 'Remote',
-    locationType:'Remotely'
+    Title: "Backend Developer",
+    jobsType: "Backend",
+    location: "Remote",
+    locationType: "Remotely",
   },
   {
-    Title:'Frontend Developer',
-    jobsType: 'Frontend',
-    location: 'Remote US timezone',
-    locationType:'US Timezone'
+    Title: "Frontend Developer",
+    jobsType: "Frontend",
+    location: "Remote US timezone",
+    locationType: "US Timezone",
   },
   {
-    Title:'Social Media Manager',
-    jobsType: 'Social Media',
-    location: 'Remote',
-    locationType:'Remote'
+    Title: "Social Media Manager",
+    jobsType: "Social Media",
+    location: "Remote",
+    locationType: "Remote",
   },
-]
+];
+
+export const imageArray = [
+  {
+    image: image,
+  },
+  {
+    image: image2,
+  },
+  {
+    image: image,
+  },
+  {
+    image: sliderImage,
+  },
+  {
+    image: sliderImage2,
+  },
+  {
+    image: image1,
+  },
+  {
+    image: sliderImage1,
+  },
+  {
+    image: image2,
+  },
+];
+
+export const mapArray = [
+  {
+    title: "Alabama",
+    rightWrong: 'yes',
+    body: "Employers cannot implement a use-it-or-lose-it policy in their businesses. However, employers can place a cap on accruals.California requires that employers pay terminated employees for accrued vacation time in their final paycheck. Under California law, vacation pay is considered a form of wages if an employer chooses to offer it to employees. California’s accrued time law applies to vacation time or vacation time that is combined with sick time under a PTO policy.",
+  },
+  {
+    title: "Alaska",
+    rightWrong: 'no',
+    body:'California requires that employers pay terminated employees for accrued vacation time in their final paycheck. Under California law, vacation pay is considered a form of wages if an employer chooses to offer it to employees.'
+  },
+  {
+    title: "Arizona",
+    rightWrong: 'yes',
+    body:'California requires that employers pay terminated employees for accrued vacation time in their final paycheck. Under California law, vacation pay is considered a form of wages if an employer chooses to offer it to employees.FLSA is the Fair Labor Standards Act, a United States federal law created to protect workers from unfair pay practices or work standards. The law has been altered many times since its creation in 1938. The original purpose was to protect workers from abuses during the Industrial Revolution and Great Depression, but the law still works to restrict child labor, ensure employees are paid a living wage, and ensure employees are paid for overtime work.'
+  },
+  {
+    title: "California",
+    rightWrong: 'no',
+    body:'California requires that employers pay terminated employees for accrued vacation time in their final paycheck. Under California law, vacation pay is considered a form of wages if an employer chooses to offer it to employees.FLSA is the Fair Labor Standards Act, a United States federal law created to protect workers from unfair pay practices or work standards. The law has been altered many times since its creation in 1938. The original purpose was to protect workers from abuses during the Industrial Revolution and Great Depression, but the law still works to restrict child labor, ensure employees are paid a living wage, and ensure employees are paid for overtime work.'
+  },
+  {
+    title: "Colorado",
+    rightWrong: 'no',
+    body: "Employers cannot implement a use-it-or-lose-it policy in their businesses. However, employers can place a cap on accruals.California requires that employers pay terminated employees for accrued vacation time in their final paycheck. Under California law, vacation pay is considered a form of wages if an employer chooses to offer it to employees. California’s accrued time law applies to vacation time or vacation time that is combined with sick time under a PTO policy.",
+  },
+  {
+    title: "Delaware",
+    rightWrong: 'yes',
+    body: "Employers cannot implement a use-it-or-lose-it policy in their businesses. However, employers can place a cap on accruals.California requires that employers pay terminated employees for accrued vacation time in their final paycheck. Under California law, vacation pay is considered a form of wages if an employer chooses to offer it to employees. California’s accrued time law applies to vacation time or vacation time that is combined with sick time under a PTO policy.",
+  },
+];

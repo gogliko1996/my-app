@@ -8,7 +8,7 @@ import { colors } from "../../utils/color/color";
 import { Text } from "../ScreenRoot/ScreenContent";
 
 export const MenuButton: React.FC<MenuButtonProps> = (props) => {
-  const { text, bodyText, color, noOpacity, icon, width, justifyContent } =
+  const { text, bodyText, color, noOpacity, icon, width, justifyContent, getText } =
     props;
 
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -17,7 +17,8 @@ export const MenuButton: React.FC<MenuButtonProps> = (props) => {
     setAnchorEl(event.currentTarget);
   };
 
-  const handleClose = () => {
+  const handleClose = (text: string) => {
+    getText && getText(text)
     setAnchorEl(null);
   };
 
@@ -57,7 +58,7 @@ export const MenuButton: React.FC<MenuButtonProps> = (props) => {
       >
         {bodyText &&
           bodyText.map((item: any, index: number) => (
-            <MenuItem key={index} onClick={handleClose} disableRipple>
+            <MenuItem key={index} onClick={() => handleClose(item)} disableRipple>
               {item}
             </MenuItem>
           ))}

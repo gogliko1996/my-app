@@ -8,5 +8,6 @@ export const screen = {
     requestDemo: '/requestDemo',
     jobs: '/jobs',
     jobsDetails: '/jobsDetails',
-    aboutUs: '/aboutUs'
+    aboutUs: '/aboutUs',
+    lawsLandingPages: '/awsLandingPages'
 }

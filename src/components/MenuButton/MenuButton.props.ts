@@ -9,4 +9,5 @@ export interface MenuButtonProps {
     icon?: ReactElement;
     width?: string | number;
     justifyContent?: 'space-between';
+    getText?: (text: string) => void;
 }
