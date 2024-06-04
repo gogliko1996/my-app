@@ -73,8 +73,8 @@ export const LawsLandingPages: React.FC = () => {
 
           <Spacer>
             <Card height={720} noShadow border="1px solid" borderColor="gray">
-              <APIProvider apiKey={"YOUR API KEY HERE"}>
-                <Map defaultCenter={position} defaultZoom={10}>
+              <APIProvider apiKey={"AIzaSyBls62eVDgW4AKNBiSo9IlfQKOgaPsnC-s"}>
+                <Map defaultCenter={position} defaultZoom={10} >
                   <Marker position={position} />
                 </Map>
               </APIProvider>
