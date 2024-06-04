@@ -111,6 +111,7 @@ export const IntegrationPage: React.FC = () => {
                 <Input
                   type="search"
                   placeholder="    Serch"
+                  value={search}
                   onChange={(e) => setSearch(e.target.value)}
                 />
               </Spacer>

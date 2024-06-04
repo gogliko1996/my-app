@@ -586,32 +586,60 @@ export const imageArray = [
 export const mapArray = [
   {
     title: "Alabama",
-    rightWrong: 'yes',
+    rightWrong: "yes",
     body: "Employers cannot implement a use-it-or-lose-it policy in their businesses. However, employers can place a cap on accruals.California requires that employers pay terminated employees for accrued vacation time in their final paycheck. Under California law, vacation pay is considered a form of wages if an employer chooses to offer it to employees. California’s accrued time law applies to vacation time or vacation time that is combined with sick time under a PTO policy.",
   },
   {
     title: "Alaska",
-    rightWrong: 'no',
-    body:'California requires that employers pay terminated employees for accrued vacation time in their final paycheck. Under California law, vacation pay is considered a form of wages if an employer chooses to offer it to employees.'
+    rightWrong: "no",
+    body: "California requires that employers pay terminated employees for accrued vacation time in their final paycheck. Under California law, vacation pay is considered a form of wages if an employer chooses to offer it to employees.",
   },
   {
     title: "Arizona",
-    rightWrong: 'yes',
-    body:'California requires that employers pay terminated employees for accrued vacation time in their final paycheck. Under California law, vacation pay is considered a form of wages if an employer chooses to offer it to employees.FLSA is the Fair Labor Standards Act, a United States federal law created to protect workers from unfair pay practices or work standards. The law has been altered many times since its creation in 1938. The original purpose was to protect workers from abuses during the Industrial Revolution and Great Depression, but the law still works to restrict child labor, ensure employees are paid a living wage, and ensure employees are paid for overtime work.'
+    rightWrong: "yes",
+    body: "California requires that employers pay terminated employees for accrued vacation time in their final paycheck. Under California law, vacation pay is considered a form of wages if an employer chooses to offer it to employees.FLSA is the Fair Labor Standards Act, a United States federal law created to protect workers from unfair pay practices or work standards. The law has been altered many times since its creation in 1938. The original purpose was to protect workers from abuses during the Industrial Revolution and Great Depression, but the law still works to restrict child labor, ensure employees are paid a living wage, and ensure employees are paid for overtime work.",
   },
   {
     title: "California",
-    rightWrong: 'no',
-    body:'California requires that employers pay terminated employees for accrued vacation time in their final paycheck. Under California law, vacation pay is considered a form of wages if an employer chooses to offer it to employees.FLSA is the Fair Labor Standards Act, a United States federal law created to protect workers from unfair pay practices or work standards. The law has been altered many times since its creation in 1938. The original purpose was to protect workers from abuses during the Industrial Revolution and Great Depression, but the law still works to restrict child labor, ensure employees are paid a living wage, and ensure employees are paid for overtime work.'
+    rightWrong: "no",
+    body: "California requires that employers pay terminated employees for accrued vacation time in their final paycheck. Under California law, vacation pay is considered a form of wages if an employer chooses to offer it to employees.FLSA is the Fair Labor Standards Act, a United States federal law created to protect workers from unfair pay practices or work standards. The law has been altered many times since its creation in 1938. The original purpose was to protect workers from abuses during the Industrial Revolution and Great Depression, but the law still works to restrict child labor, ensure employees are paid a living wage, and ensure employees are paid for overtime work.",
   },
   {
     title: "Colorado",
-    rightWrong: 'no',
+    rightWrong: "no",
     body: "Employers cannot implement a use-it-or-lose-it policy in their businesses. However, employers can place a cap on accruals.California requires that employers pay terminated employees for accrued vacation time in their final paycheck. Under California law, vacation pay is considered a form of wages if an employer chooses to offer it to employees. California’s accrued time law applies to vacation time or vacation time that is combined with sick time under a PTO policy.",
   },
   {
     title: "Delaware",
-    rightWrong: 'yes',
+    rightWrong: "yes",
     body: "Employers cannot implement a use-it-or-lose-it policy in their businesses. However, employers can place a cap on accruals.California requires that employers pay terminated employees for accrued vacation time in their final paycheck. Under California law, vacation pay is considered a form of wages if an employer chooses to offer it to employees. California’s accrued time law applies to vacation time or vacation time that is combined with sick time under a PTO policy.",
   },
+];
+
+export const anbanArray = [
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I",
+  "J",
+  "K",
+  "L",
+  "M",
+  "N",
+  "O",
+  "P",
+  "Q",
+  "R",
+  "S",
+  "T",
+  "U",
+  "W",
+  "X",
+  "Y",
+  "Z",
 ];

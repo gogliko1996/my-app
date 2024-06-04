@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Card,
   Conteiner,
   Content,
+  Input,
   Row,
   ScreenContent,
   Text,
@@ -12,16 +13,31 @@ import { Spacer } from "../../components/Spacer/Spacer";
 import { Footer } from "../../components/Footer/Footer";
 import styled from "styled-components";
 import { colors } from "../../utils/color/color";
-import { mapArray } from "../../constant/optional";
+import { anbanArray, mapArray } from "../../constant/optional";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import DoNotDisturbIcon from "@mui/icons-material/DoNotDisturb";
 import { APIProvider, Map, Marker } from "@vis.gl/react-google-maps";
+import { HederScroll } from "../../components/HederScroll/HederScroll";
 
 
 
 
 export const LawsLandingPages: React.FC = () => {
   const lastelement = mapArray[mapArray.length - 1];
+  const [mapArrays, setMapArrays] = useState(mapArray)
+  const [search, setSearch] = useState<string>("");
+
+
+  useEffect(() => {
+    if (search) {
+      const filterSupportedArray = mapArrays?.filter((item) =>
+        item.title.toLowerCase().includes(search.toLowerCase())
+      );
+      setMapArrays(filterSupportedArray);
+    }else{
+      setMapArrays(mapArray)
+    }
+  }, [search]);
 
   const position = { lat: 53.54992, lng: 10.00678 };
 
@@ -81,8 +97,23 @@ export const LawsLandingPages: React.FC = () => {
             </Card>
           </Spacer>
 
+          <Spacer mb={20} mt={20} >
+            <Row width={'100%'} justifyContent='space-between'>
+              <Conteiner width={'60%'}>
+
+              <HederScroll array={anbanArray}  slidesPerView={20}/>
+              </Conteiner>
+                <Input
+                  type="search"
+                  placeholder="    Serch"
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                />
+            </Row>
+              </Spacer>
+
           <Spacer mt={50}>
-            {mapArray.map((item, index) => (
+            {mapArrays.map((item, index) => (
               <Spacer key={index} mt={20}>
                 <Row width={"100%"} justifyContent="space-between">
                   <Spacer mb={20}>
