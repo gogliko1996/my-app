@@ -17,6 +17,9 @@ import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import DoNotDisturbIcon from "@mui/icons-material/DoNotDisturb";
 import { APIProvider, Map, Marker } from "@vis.gl/react-google-maps";
 
+
+
+
 export const LawsLandingPages: React.FC = () => {
   const lastelement = mapArray[mapArray.length - 1];
 
