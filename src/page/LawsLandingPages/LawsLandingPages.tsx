@@ -18,16 +18,19 @@ import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import DoNotDisturbIcon from "@mui/icons-material/DoNotDisturb";
 import { APIProvider, Map, Marker } from "@vis.gl/react-google-maps";
 import { HederScroll } from "../../components/HederScroll/HederScroll";
+import { useResponsive } from "../../utils/hooks/useResponsive";
 
 
 
 
 export const LawsLandingPages: React.FC = () => {
-  const lastelement = mapArray[mapArray.length - 1];
   const [mapArrays, setMapArrays] = useState(mapArray)
   const [search, setSearch] = useState<string>("");
 
-
+  const { isResponsiveMobile } = useResponsive();
+  
+  const lastelement = mapArray[mapArray.length - 1];
+  
   useEffect(() => {
     if (search) {
       const filterSupportedArray = mapArrays?.filter((item) =>
@@ -99,16 +102,18 @@ export const LawsLandingPages: React.FC = () => {
 
           <Spacer mb={20} mt={20} >
             <Row width={'100%'} justifyContent='space-between'>
-              <Conteiner width={'60%'}>
-
-              <HederScroll array={anbanArray}  slidesPerView={20}/>
+              <Conteiner width={ isResponsiveMobile ? '100%' : '60%'}>
+              <HederScroll array={anbanArray}  responsiveMobileslidesPerView={10} slidesPerView={20}/>
               </Conteiner>
+              <Spacer mt={isResponsiveMobile ? 20 : undefined}>
                 <Input
+                width={ isResponsiveMobile ? 320 : undefined}
                   type="search"
                   placeholder="    Serch"
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
-                />
+                  />
+                  </Spacer>
             </Row>
               </Spacer>
 

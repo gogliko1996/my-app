@@ -11,7 +11,7 @@ import { colors } from "../../utils/color/color";
 import { HederScrollProps } from "./HederScroll.props";
 
 export const HederScroll: React.FC<HederScrollProps> = (props) => {
-const {array, slidesPerView} = props
+const {array, slidesPerView, responsiveMobileslidesPerView} = props
 
     const [onClick, setOnClick] = useState<number | string>("");
   
@@ -21,7 +21,7 @@ const {array, slidesPerView} = props
   
     return (
       <>
-        <Swiper spaceBetween={1} slidesPerView={isResponsiveMobile ? 2 : slidesPerView ? slidesPerView : 5}>
+        <Swiper spaceBetween={1} slidesPerView={isResponsiveMobile ? responsiveMobileslidesPerView ? responsiveMobileslidesPerView : 2 : slidesPerView ? slidesPerView : 5}>
           {cangeArray.map((item, index) => (
             <SwiperSlide>
               <Spacer key={index} mb={isResponsiveMobile ? 2 : undefined}>
